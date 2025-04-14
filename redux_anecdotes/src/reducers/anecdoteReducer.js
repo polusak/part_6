@@ -42,6 +42,7 @@ const reducer = (state = initialState, action) => {
       const newState = state.map(anecdote =>
         anecdote.id !== id ? anecdote : changedAnecdote
       )
+      
       return [...newState].sort(compareAnecdotes)
     }
     default:

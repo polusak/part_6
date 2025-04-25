@@ -3,12 +3,12 @@ import { vote } from '../reducers/anecdoteReducer'
 
 const AnecdoteList = () => {
   const allAnecdotes = useSelector(state => state.anecdotes)
-  const filterObject = useSelector(state => state.filter)
+  const filter = useSelector(state => state.filter)
 
   let anecdotes = allAnecdotes
-  if (filterObject.filter !== undefined) {
+  if (filter !== undefined) {
     anecdotes = allAnecdotes.filter(anecdote => 
-      anecdote.content.includes(filterObject.filter)
+      anecdote.content.includes(filter)
     )
   }
   const dispatch = useDispatch()
